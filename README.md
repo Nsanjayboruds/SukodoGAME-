@@ -1,12 +1,114 @@
-# React + Vite
+🎮 Game Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **WebAssembly + JavaScript/TypeScript** based game built using **C++ (compiled with Emscripten)** and a **Vite + React frontend**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- Written in **C++** and compiled to WebAssembly using **Emscripten (emsdk)**.
+- Modern frontend powered by **Vite**.
+- Organized structure with support for **scripts, tests, and Docker builds**.
+- ESLint configuration for maintaining clean JavaScript/TypeScript code.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
+game/
+│── cpp/ # Core C++ source code
+│── emsdk/ # Emscripten SDK and environment setup
+│── docker/ # Docker setup for reproducible builds
+│── downloads/ # Dependencies and downloads
+│── node/ # Node-related utilities
+│── python/ # Python scripts/utilities
+│── scripts/ # Custom scripts
+│── test/ # Tests
+│── upstream/ # Upstream dependencies
+│── public/ # Static assets
+│── src/ # Frontend source (Vite + React)
+│── package.json # NPM dependencies
+│── vite.config.js # Vite configuration
+│── eslint.config.js # ESLint configuration
+│── LICENSE # License file
+│── README.md # Documentation (this file)
+
+yaml
+Copy
+Edit
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repo
+```sh
+git clone https://github.com/your-username/your-repo.git
+cd game
+2. Setup Emscripten
+Make sure you have emsdk installed:
+
+sh
+Copy
+Edit
+./emsdk install latest
+./emsdk activate latest
+3. Install Node dependencies
+sh
+Copy
+Edit
+npm install
+4. Run the development server
+sh
+Copy
+Edit
+npm run dev
+🏗️ Build Instructions
+Compile C++ → WebAssembly
+sh
+Copy
+Edit
+emcc cpp/main.cpp -o public/game.js -s WASM=1
+Build frontend
+sh
+Copy
+Edit
+npm run build
+Preview
+sh
+Copy
+Edit
+npm run preview
+🧪 Testing
+Run tests with:
+
+sh
+Copy
+Edit
+npm test
+🐳 Docker Support
+Build using Docker (optional):
+
+sh
+Copy
+Edit
+docker build -t game-project .
+📜 License
+This project is licensed under the MIT License.
+
+✨ Contributing
+Pull requests are welcome! Please open an issue first to discuss major changes.
+
+yaml
+Copy
+Edit
+
+---
+
+👉 Do you want me to tailor this **README.md** specifically for a **game engine project** (like sokoban/sokuddo style), or more like a **general template** for C++ + WebAssembly + Vite?
+
+
+
+
+
+
+
+Ask ChatGPT
