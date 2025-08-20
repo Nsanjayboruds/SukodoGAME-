@@ -1,0 +1,324 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: #0ff;
+  background-color: #111;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(9, 40px);
+  gap: 2px;
+  margin-bottom: 1rem;
+  border: 3px solid #444;
+  padding: 4px;
+  background: #333;
+}
+
+.sudoku-cell {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  background: #111;
+  color: #0ff;
+  border: 1px solid #333;
+  outline: none;
+  caret-color: #0ff;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sudoku-cell:focus {
+  background: #222;
+  color: #fff;
+}
+
+.sudoku-grid > :nth-child(3n) {
+  border-right: 2px solid #555;
+}
+
+.sudoku-grid > :nth-child(n + 19):nth-child(-n + 27),
+.sudoku-grid > :nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 2px solid #555;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: #0ff;
+  color: #111;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0cc;
+}
+
+
+/* ... Keep your previous CSS ... */
+
+.sudoku-cell.user-input {
+  background-color: #002b36;
+  color: #00e0ff;
+}
+
+.sudoku-cell.invalid-cell {
+  background-color: #400;
+  color: #f66;
+}
+
+/* Optional: Animate focus / error */
+.sudoku-cell.invalid-cell {
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+/* Previous CSS remains... */
+
+.sudoku-cell.user-input {
+  background-color: #002b36;
+  color: #00e0ff;
+}
+
+.sudoku-cell.invalid-cell {
+  background-color: #400;
+  color: #f66;
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.sudoku-cell.solved-cell {
+  background-color: #004400;
+  color: #0f0;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0.3; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.preset-buttons {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.preset-buttons button {
+  padding: 0.3rem 0.8rem;
+  background: #333;
+  color: #0ff;
+  border: 1px solid #444;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.preset-buttons button:hover {
+  background: #0ff;
+  color: #111;
+}
+
+.success-message {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #0f0;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+/* .container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #1e1e1e;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-panel {
+  background-color: #111;
+  flex-direction: column;
+}
+
+.right-panel {
+  background-color: #222;
+  flex-direction: column;
+}
+ */
+.app {
+  display: flex;
+  height: 100vh;
+  background-color: #111;
+  color: cyan;
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+h1 {
+  color: cyan;
+}
+
+.buttons, .preset-buttons {
+  margin: 1rem 0;
+}
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  gap: 2px;
+}
+
+.sudoku-cell {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  margin-top: 2rem;
+}
+
+.chess-cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.white {
+  background-color: #eee;
+}
+
+.black {
+  background-color: #444;
+}
+
+.success-message {
+  color: lime;
+  margin-top: 1rem;
+}
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #111;
+  color: cyan;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.right-panel {
+  background-color: #222;
+}
+
+h1, h2 {
+  color: cyan;
+}
+
+.preset-buttons {
+  margin: 1rem 0;
+}
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  gap: 2px;
+}
+
+.sudoku-cell {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  margin-top: 2rem;
+}
+
+.chess-cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.white {
+  background-color: #eee;
+}
+
+.black {
+  background-color: #020202;
+}
+
+.success-message {
+  color: lime;
+  margin-top: 1rem;
+}
